@@ -3,27 +3,21 @@
 const gridCont = document.querySelector(".grid-container")
 
 const sizeBtn = document.querySelector(".sizeBtn")
-sizeBtn.addEventListener("click", () => {
+const form = document.querySelector(".js-form")
+form.addEventListener("submit", (e) => {
+    e.preventDefault()
     getNewSize(document.querySelector(".new-size-input").value)
 })
 
+const para = document.querySelector("#log")
 getNewSize(16)
 
-// function colorChange(x=255) {
-//     blackRGB = `rgb(${x}, ${x}, ${x})`
-//     // box.style.backgroundColor = (`${blackRGB}`)
-//     return blackRGB
-// }
-// function addMouseover (x) {
-//     box.addEventListener("mouseover", () => {
-//         let blackGradientNum = x - (255*.1)
-//         colorChange(blackGradientNum)
-//         box.style.backgroundColor = (`${blackRGB}`)
-//         console.log(blackGradientNum)
-//     })
-// }
+
 
 function getNewSize(input) {
+    if(para.style.display = "block") {
+        para.style.display = "none";
+    }
     let inputNum = parseInt(input)
     if (inputNum) {
         if (inputNum >= 16 && inputNum <= 100) {
@@ -37,29 +31,27 @@ function getNewSize(input) {
                 box.classList.add("box")
                 box.style.height = `${boxSize}px`
                 box.style.width = `${boxSize}px`
-                box.addEventListener("mouseover", colorSquare);
-
-                    // let blackGradientNum = 255 - (255*.1)
-                    // colorChange(blackGradientNum)
-                    // box.style.backgroundColor = ("pink")
-                    // addMouseover(blackGradientNum)
-                    
-            
+                box.addEventListener("mouseenter", colorSquare);
                 gridCont.appendChild(box)
+               
             }
         }else {
+            para.style.display = "block"    
             pReturn()
         }
     }else {
+        para.style.display = "block"
         pReturn()   
     }
 }
-const para = document.querySelector("#log")
+
 function pReturn() {
     para.textContent = "Sorry, try again. 16-100"
 }
-function colorSquare() {
-    this.style.backgroundColor = "pink";
+function colorSquare(e) {
+    console.log(e.target.style.opacity)
+    e.target.style.opacity -= '-0.1';
+    this.style.backgroundColor = "black"
 }
     
 
