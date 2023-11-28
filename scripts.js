@@ -2,12 +2,25 @@ const gridCont = document.querySelector(".grid-container");
 
 const parent = document.querySelector("#parent");
 const picker = new Picker(parent);
+const eraserButton = document.querySelector(".eraser");
+
+let eraser = false;
 
 const sizeBtn = document.querySelector(".sizeBtn");
 const form = document.querySelector(".js-form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   getNewSize(document.querySelector(".new-size-input").value);
+});
+
+eraserButton.addEventListener("click", () => {
+  eraser = eraser ? false : true;
+  if (eraser) {
+    eraserButton.style.backgroundColor = "#9aba83ff";
+  } else {
+    eraserButton.style.backgroundColor = "#f7f2d5";
+  }
+  console.log(eraser);
 });
 
 const para = document.querySelector("#log");
@@ -58,6 +71,11 @@ picker.onChange = function getColor(color) {
 };
 
 function colorSquare(e) {
-  e.target.style.opacity -= "-0.2";
-  this.style.backgroundColor = myColor;
+  if (eraser) {
+    e.target.style.opacity = "0.122";
+    this.style.backgroundColor = "rgb(184, 162, 129)";
+  } else {
+    e.target.style.opacity -= "-0.2";
+    this.style.backgroundColor = myColor;
+  }
 }

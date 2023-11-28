@@ -28,12 +28,27 @@
             <div id="parent">Color Select</div>
           </div>
           <h2 class="grid-size">grid size:</h2>
-          <form class="js-form">
+          <form id="myForm" class="js-form">
             <input value="24" class="new-size-input" type="text" />
             <button class="sizeBtn" type="submit">OK</button>
             <p id="log"></p>
           </form>
           <h2 class="tools">tools:</h2>
+          <div class="tool-buttons">
+            <button class="eraser">
+              <div class="eraser-container">
+                <img
+                  src="eraser_regular_icon_202895.png"
+                  alt="eraser icon button"
+                />
+              </div>
+            </button>
+            <button type="submit" form="myForm" class="reset">
+              <div class="can-container">
+                <img src="can.png" alt="reset button" />
+              </div>
+            </button>
+          </div>
         </div>
       </div>
     </div>

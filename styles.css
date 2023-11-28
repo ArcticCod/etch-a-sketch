@@ -33,7 +33,7 @@ body {
 .box {
   opacity: 100%;
   flex-grow: 1;
-  background-color: #b8a2811f;
+  background-color: rgba(184, 162, 129, 0.122);
   box-sizing: border-box;
 }
 
@@ -80,6 +80,41 @@ h2 {
   border: none;
   font-size: 18px;
   font-family: "Patrick Hand SC", cursive;
+}
+.tool-buttons {
+  display: flex;
+  gap: 25px;
+}
+
+.reset {
+  background-color: #f7f2d5;
+  border: none;
+}
+.eraser {
+  background-color: #f7f2d5;
+  border: none;
+  -webkit-user-drag: none;
+}
+.eraser-container {
+  height: 30px;
+  width: 30px;
+  padding: 5px 2px;
+  overflow: hidden;
+}
+.can-container {
+  height: 30px;
+  width: 30px;
+  padding: 5px 2px;
+  background-color: #f7f2d5;
+  overflow: hidden;
+}
+img {
+  background-size: cover;
+  max-width: 100%;
+  -webkit-user-drag: none;
+}
+.tools {
+  margin-bottom: 10px;
 }
 
 @media (max-width: 1200px) {
