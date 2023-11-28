@@ -49,6 +49,7 @@ function getNewSize(input) {
         // box.style.height = `${boxSize}px`;
         box.style.width = `${boxSize}px`;
         box.addEventListener("mouseenter", colorSquare);
+        box.addEventListener("touchmove", colorSquare);
         gridCont.appendChild(box);
       }
     } else {
