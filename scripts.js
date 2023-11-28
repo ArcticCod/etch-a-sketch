@@ -51,6 +51,8 @@ function getNewSize(input) {
         box.addEventListener("mouseenter", colorSquare);
         box.addEventListener("touchmove", (e) => {
           e.preventDefault();
+        });
+        box.addEventListener("mouseover", (e) => {
           colorSquare(e);
         });
         gridCont.appendChild(box);
@@ -79,7 +81,7 @@ function colorSquare(e) {
     e.target.style.opacity = "0.122";
     this.style.backgroundColor = "rgb(184, 162, 129)";
   } else {
-    e.target.style.opacity -= "-0.2";
+    e.target.style.opacity -= "-0.1";
     this.style.backgroundColor = myColor;
   }
 }
